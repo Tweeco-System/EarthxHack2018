@@ -1,2 +1,2 @@
 # EarthxHack2018
-# A team collarative repository 
+# A team collaborative repository 

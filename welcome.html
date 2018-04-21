@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Twitter Trash</title>
+    <link rel="stylesheet" href="stylesheet.css" type="text/css">    
+  </head>
+  <body>
+    <h1>Welcome To Tweeco-System!</h1>
+    <h3>Locate trash to elimate waste</h3>
+
+    <div id="locationMap">
+    	TODO: SHOW MAP
+    </div>
+
+    <br />
+
+    <div id="zipSearch">
+    <form>
+      <fieldset>
+        <legend><b>Tweet Location by Zip Code</b></legend>
+        <label for="Zip Code"><b>Enter Zip Code</b></label>
+        <input type="text" name="zip" id="zipCode">
+        <input type="submit" id="zipSubmit">
+      </fieldset>
+    </form>    
+    <div>
+
+    <br />
+
+    <div id="hashSearch">
+    <form>
+      <fieldset>
+        <legend><b>Tweets by Hashtag</b></legend>
+        <label for="Hashtag"><b>Please Select Hashtag #</b></label>
+        <input type="text" name="hashtag" id="hashtag">
+        <input type="submit" id="hashSubmit">
+      </fieldset>
+    </form>    
+    <div>    	
+
+    <br />
+
+    <div id=tweets>	
+	    <a class="twitter-timeline"  href="https://twitter.com/hashtag/Hacking" data-widget-id="987759137680494594">#EarthxHack Tweets</a>
+	    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
+	</div>
+
+    <script src="yourScript"></script>
+  </body>
+</html>

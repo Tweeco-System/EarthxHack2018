@@ -3,6 +3,10 @@ from tweepy import Stream
 from tweepy.streaming import StreamListener 
 from tweepy import OAuthHandler
 import json
+import csv
+
+# insert authentication info here 
+
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)
@@ -33,5 +37,10 @@ class MyListener(StreamListener):
         return True
  
 #Set the hashtag to be searched
+
 twitter_stream = Stream(auth, MyListener())
 twitter_stream.filter(track=['#EarthDay'])
+
+########
+
+    

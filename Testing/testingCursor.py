@@ -7,7 +7,7 @@ import csv
 
 consumer_key = ""
 consumer_secret = ""
-access_token = "810603802395025408-"
+access_token = ""
 access_secret = ""
 
 

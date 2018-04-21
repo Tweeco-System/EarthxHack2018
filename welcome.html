@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Tweeco-System</title>
-    <link rel="stylesheet" href="stylesheet.css" type="text/css">    
+    <link rel="stylesheet" href="assets/stylesheets/stylesheet.css" type="text/css">    
   </head>
   <body>
     <h1>Welcome To Tweeco-System!</h1>
@@ -42,12 +42,19 @@
     <div id="googleMap" style="width:50%;height:400px;">
 		<script>
 			function myMap() {
-			var mapProp= {
-			    center:new google.maps.LatLng(51.508742,-0.120850),
-			    zoom:12,
-			};
-			var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+				var currentLatLng = {lat: 33.0198, lng: -96.6989};
+				var mapProp= {
+				    center: currentLatLng,
+				    zoom:13,
+				};
+				var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+// ADD MAP MARKER					
+				var marker = new google.maps.Marker({
+		          position: currentLatLng,
+		          map: map
+		        });
 			}
+
 		</script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAfyln-jWNgaec2VKZ3aJb9Hov4Pp-1q8&callback=myMap"></script>    	
     </div>

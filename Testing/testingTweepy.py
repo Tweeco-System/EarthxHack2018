@@ -6,6 +6,10 @@ import json
 import csv
 
 # insert authentication info here 
+consumer_key = ""
+consumer_secret = ""
+access_token = ""
+access_secret = ""
 
 
 auth = OAuthHandler(consumer_key, consumer_secret)
@@ -39,7 +43,7 @@ class MyListener(StreamListener):
 #Set the hashtag to be searched
 
 twitter_stream = Stream(auth, MyListener())
-twitter_stream.filter(track=['#EarthDay'])
+twitter_stream.filter(track=['#EarthDay'], async=True)
 
 ########
 

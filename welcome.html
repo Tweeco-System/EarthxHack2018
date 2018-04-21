@@ -2,18 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Twitter Trash</title>
+    <title>Tweeco-System</title>
     <link rel="stylesheet" href="stylesheet.css" type="text/css">    
   </head>
   <body>
     <h1>Welcome To Tweeco-System!</h1>
-    <h3>Locate trash to elimate waste</h3>
+    <h3>Select a cause to fight against</h3>
 
-    <div id="locationMap">
-    	TODO: SHOW MAP
-    </div>
-
-    <br />
+<!-- SEARCH BY ZIP CODE  -->
 
     <div id="zipSearch">
     <form>
@@ -28,6 +24,7 @@
 
     <br />
 
+<!-- SEARCH BY HASHTAG -->
     <div id="hashSearch">
     <form>
       <fieldset>
@@ -41,6 +38,23 @@
 
     <br />
 
+<!-- GOOGLE MAP -->
+    <div id="googleMap" style="width:50%;height:400px;">
+		<script>
+			function myMap() {
+			var mapProp= {
+			    center:new google.maps.LatLng(51.508742,-0.120850),
+			    zoom:12,
+			};
+			var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+			}
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAfyln-jWNgaec2VKZ3aJb9Hov4Pp-1q8&callback=myMap"></script>    	
+    </div>
+   
+    <br />
+
+<!-- TWEET DISPLAY -->
     <div id=tweets>	
 	    <a class="twitter-timeline"  href="https://twitter.com/hashtag/Hacking" data-widget-id="987759137680494594">#EarthxHack Tweets</a>
 	    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	

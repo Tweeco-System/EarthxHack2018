@@ -19,9 +19,16 @@
         <input type="number" min="10000" max="99999" name="zip" id="zipCode" required >
     
         <label for="Hashtag"><b>Please Select Hashtag #</b></label>
-        <input type="text" name="hashtag" id="hashtag" required>
-        
-        <input type="submit" id="zipSubmit">
+          <input list="tags" name="tags" required>
+            <datalist id="tags">
+              <option value="Litter">
+              <option value="water">
+              <option value="trees">
+              <option value="earth">
+              <option value="forest">
+              <option value="rain">
+            </datalist>      
+        <input type="submit">
       </fieldset>
     </form>    
     <div>

@@ -10,5 +10,5 @@ geolocator = Nominatim()
 from getSearchDataWithLocationFilter import getSearchDataZipFunc
 from getTXTlocations import getCoorsFunc
 
-getSearchDataZipFunc(100,77584)
+getSearchDataZipFunc(200,75062)
 getCoorsFunc()

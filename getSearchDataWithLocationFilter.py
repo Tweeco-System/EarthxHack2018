@@ -8,7 +8,7 @@ geolocator = Nominatim()
 
 
 def getCoorFromZip(zipcode):
-    location = geolocator.geocode(str(zipcode) + ",US")
+    location = geolocator.geocode(str(zipcode) + ",USA")
     lat = location.latitude
     long = location.longitude
     return [lat, long]

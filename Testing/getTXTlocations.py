@@ -42,6 +42,7 @@ for tweet in coors:
 with open('OUTPUTcoordinates.json', 'w') as outfile:
     json.dump(data, outfile)
 '''
+
 def getCoorsFunc():
     tweetLocations = []
     

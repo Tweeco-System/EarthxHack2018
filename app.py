@@ -18,11 +18,11 @@ def receiver():
     user = request.args.get('zip')
 
     # return result
-    return render_template("success.html") 
+    return redirect(url_for('success',name = user))
 
 @app.route('/success')
 def success():
     return render_template("success.html")
 
 if __name__=='__main__':
-    app.run()
+    app.run(host='https://tweeco-system.herokuapp.com/')

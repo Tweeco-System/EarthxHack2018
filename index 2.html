@@ -39,24 +39,28 @@
     <div id="googleMap" style="width:50%;height:400px;">
 		<script>
 			function myMap(coords) {
-        if(!coords) coords = {lat: 33.0198, lng: -96.6989};
-				var currentLatLng = coords;
+        coords = coords.data
+       if(!coords) coords = {tweets:[{latitude: 33.0198, longitude: -96.6989}]};
+				var currentLatLng = {lat: coords.tweets[0].latitude, lng: coords.tweets[0].longitude};
 				var mapProp= {
 				    center: currentLatLng,
 				    zoom:13,
 				};
 				var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 // ADD MAP MARKER					
-				var marker = new google.maps.Marker({
+/*				var marker = new google.maps.Marker({
 		          position: currentLatLng,
 		          map: map
             });
+*/        for(var i=0; i < coords.tweets.length; i++){
+            console.log(coords.tweets[i])
+        
             var marker = new google.maps.Marker({
-              position: {lat: currentLatLng.lat - 1,
-                          lng: currentLatLng.lng - 1},
+              position: {lat: parseFloat(coords.tweets[i].latitude),
+                          lng: parseFloat(coords.tweets[i].longitude)},
 		          map: map
 		        });
-			}
+      			}			}
 
 		</script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAfyln-jWNgaec2VKZ3aJb9Hov4Pp-1q8&callback=myMap"></script>    	

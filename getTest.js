@@ -5,7 +5,8 @@ var bodyParser = require('body-parser')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
 
-
+var data = require('./OUTPUTcoordinates')
+console.log(data)
 app.post('/receiver', (req,res)=>{
     var zipcode = req.body.zip
     var category = req.body.hashtag
@@ -18,11 +19,11 @@ app.post('/receiver', (req,res)=>{
         long: -115.8067
     }]
 
-    res.send(JSON.stringify(dummy))
+    res.send(JSON.stringify(data))
 })
 
 
-var port = process.argv[2] || 6000
+var port = process.argv[2] || 5000
 
 app.listen(port);
 console.log("Server on port " + port)

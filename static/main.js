@@ -2,6 +2,7 @@
         main.js is the javscript that is served to the index.html main page of the app.
 */
 
+
 // server root url
 var url = "http://localhost:5000"
 
@@ -15,9 +16,9 @@ document.getElementById("zipForm").addEventListener("submit", (event)=>{
     // data to send to server
     var payload = {
         zip: event.target.zip.value,
-        hashtag: event.target.hashtag.value
+        tags: event.target.tags.value
     }
-
+console.log('POST 2')
     // fetch POST request -- send payload and receive data in callback/promise
     fetch(url + "/receiver", {
         method: 'post',
@@ -26,11 +27,14 @@ document.getElementById("zipForm").addEventListener("submit", (event)=>{
 
     }).then((data)=>{
     // callback/promise to receive data from server and update map coords
+        
         return data.json()})
         .then((data)=>{
+            console.log(data)
             myMap({
-                lat: data[0].lat,
-                lng: data[0].long
+                data
+                //lat: data.tweets[0].latitude,
+               // lng: data.tweets[0].longitude
             })
         })})
     

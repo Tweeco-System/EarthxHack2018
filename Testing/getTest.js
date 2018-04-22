@@ -6,6 +6,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
 
 
+app.use(express.static('EarthxHack2018'));
+
 app.post('/receiver', (req,res)=>{
     var zipcode = req.body.zip
     var category = req.body.hashtag
@@ -22,7 +24,7 @@ app.post('/receiver', (req,res)=>{
 })
 
 
-var port = process.argv[2] || 6000
+var port = process.argv[2] || 5000
 
 app.listen(port);
 console.log("Server on port " + port)

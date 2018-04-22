@@ -21,16 +21,22 @@ for tweet in public_tweets:
 
 
 
-tweets = tweepy.Cursor(api.search, q='earthx', show_user="true").items(10)
+tweets = tweepy.Cursor(api.search, q='earthx', show_user="true").items(100)
 
-for tweet in tweets:
-  #  print(tweet.user.location)
-    cityState = str(tweet.user.location).split(', ')
-  #  print(cityState)
-    if len(cityState) == 2:
-        try:
-            results = search.by_city_and_state(cityState[0], cityState[1])
-            print(results[0].Latitude, results[0].Longitude)
-        except:
-            print("invalid city name", cityState)
-            
+def getCoordinates(tweetsList):
+    coorList = []
+    for tweet in tweetsList:
+      #  print(tweet.user.location)
+        cityState = str(tweet.user.location).split(', ')
+      #  print(cityState)
+        if len(cityState) == 2:
+            try:
+                results = search.by_city_and_state(cityState[0], cityState[1])
+                coorList += [results[0].Latitude, results[0].Longitude]
+                print(results[0].Latitude, results[0].Longitude)
+            except:
+                print("invalid city name", cityState)    
+
+    return coorList
+
+getCoordinates(tweets)

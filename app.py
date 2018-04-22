@@ -18,7 +18,7 @@ def receiver():
     user = request.args.get('zip')
 
     # return result
-    return render_template("success.html")
+    return redirect(url_for('success',_external=True,name = user))
 
 @app.route('/success')
 def success():

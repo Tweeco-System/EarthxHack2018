@@ -14,3 +14,7 @@ music
 litter box
  rap 
 album
+sports
+boxing
+refs
+game

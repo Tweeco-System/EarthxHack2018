@@ -2,10 +2,11 @@
 
 import sys
 import os
-
+from flask import jsonify
 from flask import Flask, render_template, request, redirect, Response, url_for
 import random, json
-import getDataAndCoors
+# import getDataAndCoors
+# from pprint import pprint
 
 
 app = Flask(__name__)
@@ -28,9 +29,12 @@ def receiver():
 
     # os.system("getDataAndCoors.py")
     # execfile('getDataAndCoors.py')
-    exec(open(getDataAndCoors.py).read())
-
-    return redirect(url_for('success',_external=True))
+    exec(open('getDataAndCoors.py').read())
+    data = json.load(open('OUTPUTcoordinates.json'))
+    print("here is the data")
+    # print(data)
+    return jsonify(data)
+    # return redirect(url_for('success',_external=True))
 
 @app.route('/success')
 def success():

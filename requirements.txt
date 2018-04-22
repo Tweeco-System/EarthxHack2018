@@ -11,4 +11,5 @@ simplejson==3.14.0
 googlemaps==2.5.1
 gmaps==0.7.4
 geopy==1.13.0
-tweepy
+tweepy=3.6.0
+jsonify==0.5

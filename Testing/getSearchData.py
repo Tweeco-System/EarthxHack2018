@@ -5,7 +5,9 @@ import json
 from textblob import TextBlob
 
 blacklistFile = open("wordsToAvoid.txt", 'r')
-wordsToAvoid = blacklistFile.readlines()
+wordsToAvoid = []
+for line in blacklistFile:
+    wordsToAvoid += [line.rstrip('\n')]
 blacklistFile.close()
 
 def wordsNotInStr(wordsList, s):
@@ -19,10 +21,10 @@ searchTerms = []
 
 for line in searchTermsFile:
     searchTerms+= [line.rstrip()]
-    
+searchTermsFile.close() 
 tweetsList = []
 
-numOfTweets = 100
+numOfTweets = 300
 #code = 
 #rad = 
 client = get_twitter_client()
@@ -35,7 +37,15 @@ for word in searchTerms:
                 if wordsNotInStr(wordsToAvoid, tweet.text):
                     tweetsList += [[tweet.text, tweet.user.location]]
         
-for item in tweetsList:
-    print(item[0])
-    print(item[1])
-    print()
+data = {}
+data['tweets'] = []
+
+for tweet in tweetsList:
+    data['tweets'].append({
+        'text': tweet[0],
+        'location' : tweet[1]
+    })
+
+    
+with open('OUTPUTgetSearchData.json', 'w') as outfile:
+    json.dump(data, outfile)

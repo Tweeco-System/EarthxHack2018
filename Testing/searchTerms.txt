@@ -1,3 +1,2 @@
-pollution
-trash
-litter
+#pollution
+#litter

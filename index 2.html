@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Tweeco-System</title>
+    <link rel="stylesheet" href='/style.css' type="text/css">    
+  </head>
+  <body>
+    <h1>Welcome To Tweeco-System!</h1>
+    <h3>Select a cause to fight against</h3>
+
+<!-- SEARCH BY ZIP CODE  -->
+
+    <div id="zipSearch">
+    <form id="zipForm" action = "http://localhost:5000/receiver" method = "post">
+      <fieldset>
+        <legend><b>Tweet Location by Zip Code and Hashtag</b></legend>
+        <label for="Zip Code"><b>Enter Zip Code</b></label>
+        <input type="number" min="10000" max="99999" name="zip" id="zipCode" required >
+    
+        <label for="Hashtag"><b>Please Select Hashtag #</b></label>
+          <input list="tags" name="tags" required>
+            <datalist id="tags">
+              <option value="Litter">
+              <option value="water">
+              <option value="trees">
+              <option value="earth">
+              <option value="forest">
+              <option value="rain">
+            </datalist>      
+        <input type="submit">
+      </fieldset>
+    </form>    
+    <div>
+
+    <br />  	
+
+<!-- GOOGLE MAP -->
+    <div id="googleMap" style="width:50%;height:400px;">
+		<script>
+			function myMap(coords) {
+        if(!coords) coords = {lat: 33.0198, lng: -96.6989};
+				var currentLatLng = coords;
+				var mapProp= {
+				    center: currentLatLng,
+				    zoom:13,
+				};
+				var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+// ADD MAP MARKER					
+				var marker = new google.maps.Marker({
+		          position: currentLatLng,
+		          map: map
+            });
+            var marker = new google.maps.Marker({
+              position: {lat: currentLatLng.lat - 1,
+                          lng: currentLatLng.lng - 1},
+		          map: map
+		        });
+			}
+
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAfyln-jWNgaec2VKZ3aJb9Hov4Pp-1q8&callback=myMap"></script>    	
+    </div>
+   
+    <br />
+
+<!-- TWEET DISPLAY -->
+    <div id=tweets>	
+	    <a class="twitter-timeline"  href="https://twitter.com/hashtag/Hacking" data-widget-id="987759137680494594">#EarthxHack Tweets</a>
+	    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
+	</div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

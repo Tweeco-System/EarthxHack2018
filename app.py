@@ -14,11 +14,17 @@ def index():
 
 @app.route('/receiver', methods = ['POST'])
 def receiver():
+    
+    tags = request.form['tags']
+    print(tags)
 
-    user = request.args.get('zip')
+    file = open("searchTerms.txt","w") 
+ 
+    file.write(tags) 
+         
+    file.close() 
 
-    # return result
-    return redirect(url_for('success',_external=True,name = user))
+    return redirect(url_for('success',_external=True))
 
 @app.route('/success')
 def success():

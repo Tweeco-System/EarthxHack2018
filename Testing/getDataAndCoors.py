@@ -10,5 +10,6 @@ geolocator = Nominatim()
 from getSearchData import getSearchDataFunc
 from getTXTlocations import getCoorsFunc
 
+print("inside geo data and cors")
 getSearchDataFunc(100)
 getCoorsFunc()

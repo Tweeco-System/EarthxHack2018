@@ -20,3 +20,7 @@ refs
 game
 man
 Man
+GF
+gf
+BF
+bf

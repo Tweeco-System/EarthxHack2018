@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Tweeco-System</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}" type="text/css">    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">    
   </head>
   <body>
     <h1>Welcome To Tweeco-System!</h1>
@@ -12,7 +12,7 @@
 <!-- SEARCH BY ZIP CODE  -->
 
     <div id="zipSearch">
-    <form>
+    <form action = "http://localhost:5000/receiver" method = "post">
       <fieldset>
         <legend><b>Tweet Location by Zip Code</b></legend>
         <label for="Zip Code"><b>Enter Zip Code</b></label>

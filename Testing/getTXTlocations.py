@@ -75,9 +75,9 @@ def getCoorsFunc():
     
     for tweet in coors:
         data['tweets'].append({
-            'text': coors[2],
-            'latitude' : coors[0],
-            'longitude' : coors[1]
+            'text': tweet[2],
+            'latitude' : tweet[0],
+            'longitude' : tweet[1]
         })
     
         

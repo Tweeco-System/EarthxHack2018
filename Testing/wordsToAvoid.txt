@@ -18,3 +18,5 @@ sports
 boxing
 refs
 game
+man
+Man

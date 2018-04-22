@@ -14,7 +14,8 @@ document.getElementById("zipForm").addEventListener("submit", (event)=>{
 
     // data to send to server
     var payload = {
-        zip: event.target.zip.value
+        zip: event.target.zip.value,
+        hashtag: event.target.hashtag.value
     }
 
     // fetch POST request -- send payload and receive data in callback/promise

@@ -14,29 +14,19 @@
     <div id="zipSearch">
     <form id="zipForm" action = "http://localhost:5000/receiver" method = "post">
       <fieldset>
-        <legend><b>Tweet Location by Zip Code</b></legend>
+        <legend><b>Tweet Location by Zip Code and Hashtag</b></legend>
         <label for="Zip Code"><b>Enter Zip Code</b></label>
         <input type="number" min="10000" max="99999" name="zip" id="zipCode" required >
+    
+        <label for="Hashtag"><b>Please Select Hashtag #</b></label>
+        <input type="text" name="hashtag" id="hashtag" required>
+        
         <input type="submit" id="zipSubmit">
       </fieldset>
     </form>    
     <div>
 
-    <br />
-
-<!-- SEARCH BY HASHTAG -->
-    <div id="hashSearch">
-    <form>
-      <fieldset>
-        <legend><b>Tweets by Hashtag</b></legend>
-        <label for="Hashtag"><b>Please Select Hashtag #</b></label>
-        <input type="text" name="hashtag" id="hashtag">
-        <input type="submit" id="hashSubmit">
-      </fieldset>
-    </form>    
-    <div>    	
-
-    <br />
+    <br />  	
 
 <!-- GOOGLE MAP -->
     <div id="googleMap" style="width:50%;height:400px;">

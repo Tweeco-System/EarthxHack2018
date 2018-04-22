@@ -24,7 +24,7 @@ for line in searchTermsFile:
 searchTermsFile.close() 
 tweetsList = []
 
-numOfTweets = 300
+numOfTweets = 500
 #code = 
 #rad = 
 client = get_twitter_client()
@@ -36,9 +36,14 @@ for word in searchTerms:
             if tweet not in tweetsList:
                 if wordsNotInStr(wordsToAvoid, tweet.text):
                     tweetsList += [[tweet.text, tweet.user.location]]
+
+for tweet in tweetsList:
+    print(tweet[0])
+    print(tweet[1])
         
 data = {}
 data['tweets'] = []
+
 
 for tweet in tweetsList:
     data['tweets'].append({
@@ -49,3 +54,4 @@ for tweet in tweetsList:
     
 with open('OUTPUTgetSearchData.json', 'w') as outfile:
     json.dump(data, outfile)
+

@@ -8,4 +8,6 @@ if __name__ == '__main__':
     with open('home_timeline_out.json', 'w') as file:
         for page in Cursor(client.home_timeline, count = 10).pages(4):
             for status in page:
-                file.write(json.dumps(status._jason)+"\n")
+                file.write(json.dumps(status._json)+"\n")
+                print(status.text)
+                print()

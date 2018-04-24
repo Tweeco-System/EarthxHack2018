@@ -1,4 +1,15 @@
-h3{
+html { 
+  background: url(img/fresh_snow.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
   color:green;
 }
 
+h3{
+  color: orange;
+}
